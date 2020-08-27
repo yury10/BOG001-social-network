@@ -14,3 +14,8 @@ window.addEventListener("hashchange", () => {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
+//Funcione en el navegador
+createuserwithEmailAndPassword(email, password);
+
+
+
