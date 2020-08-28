@@ -1,44 +1,82 @@
 const initialSession = () => {
   const view = `
-  <main>
+<main>
   <header class="header">
     <img src=" ../images/logo.png" alt="logo" class="logo-adopt">
-  </header>
-  <section class="items-login">
-    <img src="../images/user.png" alt="user" class="user">
-    <img src="../images/password.png" alt="password" class="password"></img>
-</section>
-    <form id="signup-form" >
-      <input type="text" class="user-placeholder" id="signup-email" placeholder="Email">
+
+    <section class="items-login">
+      <img src="../images/user.png" alt="user" class="user">
+      <img src="../images/password.png" alt="password" class="password"></img>
+    </section>
+    <form id="formLogin">
+      <input type="text" class="user-placeholder" id="loginEmail" placeholder="Email">
       <div class="line-white-login"></div>
-      <input type="password" class="password-placeholder" id="signup-password" placeholder="Password">
-      <button type="submit" id="button-initial" >Login</button>
-      </form>
-      <a href="#" class"forgot-your-password" > Forgot your password ?</a >
+      <input type="password" class="password-placeholder" id="loginPassword" placeholder="Password">
+      </header>
+  <button type="submit" id="buttonLogin">Login</button>
+  </form>
+
+  <a href="#" class"forgot"> Forgot your password ?</a>
   <a href="#/formRegister" class="register">Register</a>
-  <img src="../images/gmail.png" alt="" class="Gmail">
-    <div class="line-white-register"></div>
-    <img src="../images/dogs-home.png" alt="dogs-home" class="dogs-home">
-</div>
- 
+  <button type="button" id="Gmail">Sign up with google</button>
+  <div class="line-white-register"></div>
+  </div>
+
+  <section>
+  <h1>
+Welcome to the social 
+network that loves dogs 
+the most
+  </h1>
+    <img src="../images/dogs-desktop.png" alt="dogsHome" class="dogsHome">
+  </section>
+
   `;
   const divElement = document.createElement('div');
   divElement.innerHTML = view;
   return divElement;
 };
 
-export const añadirEventos = () => {
-  const signupForm = document.querySelector('#signup-form');
-  signupForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const signupEmail = document.querySelector('#signup-email').value;
-    const signupPassword = document.querySelector('#signup-password').value;
-    console.log(signupEmail, signupPassword)
-  })
-}
-
 export default initialSession;
 
 
+export const login = () => {
+  const loginForm = document.querySelector('#formLogin');
+  loginForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const loginEmail = document.querySelector('#loginEmail').value;
+    const loginPassword = document.querySelector('#loginPassword').value;
+    console.log(loginEmail, loginPassword)
+    //Funcione en el navegador
+    auth
+      .signInWithEmailAndPassword(loginEmail, loginPassword)
+      .then(userCredential => {
+        console.log(userCredential);
+        loginForm.reset();
 
 
+        console.log('sign In')
+
+      })
+
+
+  })
+
+};
+
+//GMAIL Login
+export const gmail = () => {
+  const gmailbutton = document.querySelector('#Gmail')
+  gmailbutton.addEventListener('click', e => {
+
+    const provider = new firebase.auth.GoogleAuthProvider();
+    auth.signInWithPopup(provider)
+      .then(result => {
+        console.log('google sign in')
+      })
+      .catch(err => {
+        console.log(err)
+      })
+
+  })
+}
