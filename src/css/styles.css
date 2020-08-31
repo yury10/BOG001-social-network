@@ -15,10 +15,6 @@ body{
     width: 15%;
 }
 
-
-.items-login{
-    
-}
 .user {
     width: 100px;
     height: 80px;
@@ -40,13 +36,14 @@ body{
     border: none;
     outline:none;
      background-color:#7AE8AB;
+     margin-left: 70%;
 }
 .password-placeholder{
 
     border: none;
     outline:none;
     background-color:#7AE8AB;
-
+    margin-left: 70%;
 }
 
 .user-placeholder::placeholder{
@@ -57,10 +54,37 @@ body{
 .password-placeholder::placeholder { 
     color: white; 
 }
-.Gmail{
-    width: 15%;
+
+#buttonLogin{
+    color:white;
+    background: #7AE8AB;
+    border: none;
+    font-size: 20px;
     height: 40%;
-    margin-left: 85%;
+    margin-left:70%;
+    cursor: pointer;
+}
+#buttonLogin:hover{
+    color: #4285F4;
+    background: white;
+    border-radius: 15px;
+    width: 250px;
+    height: 28px;
+}
+#Gmail{
+   color: white;
+    border: none;
+    background: #7AE8AB;
+    margin-left:70%;
+    cursor:pointer;
+
+}
+#Gmail:hover{
+ background:#4285F4;
+ border-radius: 15px;
+    width: 250px;
+    height: 28px;
+
 }
 .dogs-home{
     margin-left: 78%;
