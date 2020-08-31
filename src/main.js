@@ -1,10 +1,7 @@
-// Este es el punto de entrada de tu aplicacion
-
-
-import initialSession from '../views/initialSession.js';
+// Este es el punto de entrada de tu aplicacions
 import { login } from "./views/initialSession.js"
 import { gmail } from "./views/initialSession.js"
-import { añadirEventos } from './views/form-register.js';
+
 
 import router from "./routes/route.js";
 
@@ -18,7 +15,6 @@ window.addEventListener("load", () => {
     default:
       login();
       gmail();
-
   }
 
 

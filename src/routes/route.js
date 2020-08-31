@@ -4,7 +4,6 @@ import postAdoption from '../views/post-adoption.js';
 import adopt from "../views/adopt.js";
 import error404 from "../views/error404.js";
 import { añadirEventos } from "../views/form-register.js"
-import { login } from "../views/initialSession.js"
 import register from "../views/form-register.js"
 
 const router = async (route) => {

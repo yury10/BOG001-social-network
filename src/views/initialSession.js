@@ -51,7 +51,7 @@ export const login = () => {
     auth
       .signInWithEmailAndPassword(loginEmail, loginPassword)
       .then(userCredential => {
-        console.log(userCredential);
+        console.log(login);
         loginForm.reset();
 
 
@@ -79,4 +79,4 @@ export const gmail = () => {
       })
 
   })
-}
+} 
