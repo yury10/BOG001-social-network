@@ -5,6 +5,8 @@ import error404 from "../views/error404.js";
 import { añadirEventos } from "../views/form-register.js"
 import register from "../views/form-register.js"
 import { login, gmail } from "../views/initialSession.js"
+import { postInitial } from "../views/post-adoption.js"
+
 
 
 const router = async (route) => {
@@ -20,14 +22,16 @@ const router = async (route) => {
             await login();
             await gmail();
             break;
-        case '#/postAdoption':
-            pedazoDelDom = postAdoption();
-            break;
         //RUTA USER NOT REGISTER
         case '#/formRegister':
             pedazoDelDom = await register();
             await content.appendChild(pedazoDelDom)
             await añadirEventos();
+            break;
+        case '#/postAdoption':
+            pedazoDelDom = await postAdoption();
+            await content.appendChild(pedazoDelDom)
+            await postInitial();
             break;
         case '#/adopt':
             pedazoDelDom = adopt();
@@ -41,8 +45,7 @@ const router = async (route) => {
 
 
     }
-    /*  content.appendChild(pedazoDelDom);
-  */
+
 
 
 };

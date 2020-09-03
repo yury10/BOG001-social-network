@@ -1,4 +1,5 @@
 *{
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: 'Alata', sans-serif;
@@ -90,4 +91,35 @@ body{
     margin-left: 78%;
     width: 25%;
     height: 40%;
+}
+
+
+@media screen and (max-width:320px){
+body{
+    background: #00FFB1;
+}
+.items-login{
+    margin-right: 65%;
+}
+
+}
+@media screen and (max-width:480px){
+    body{
+        background: #00FFB1;
+    }
+     .items-login{
+        margin-right: 100%;
+    } 
+    
+}
+
+
+@media screen and (max-width:768px){
+   
+    
+
+}
+
+
+@media screen and (max-width:1024px){
 }
