@@ -9,7 +9,7 @@ const register = () => {
     <input type= "text" class="last-names"  placeholder="Last names">
     <input type= "text" class="email"  placeholder="Email" id="signup-email">
     <input type= "Password" class="password"  placeholder="Password" id="signup-password">
-    <button type="submit" id="button-initial">Singup</button>
+    <button type="submit" id="button-initial" onclick="window.location.href='#/postAdoption'">Sing up</button>
     </form>
     <img src="../images/dog-adopt.png" alt="dog-adopt" class="dog-adopt">
 `;

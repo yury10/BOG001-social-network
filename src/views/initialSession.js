@@ -3,33 +3,22 @@ const initialSession = () => {
 <main>
   <header class="header">
     <img src=" ../images/logo.png" alt="logo" class="logo-adopt">
-
-    <section class="items-login">
-      <img src="../images/user.png" alt="user" class="user">
+    </header>
+    <section class="items-login"> 
+    <img src="../images/user.png" alt="user" class="user">
       <img src="../images/password.png" alt="password" class="password"></img>
     </section>
     <form id="formLogin">
-      <input type="text" class="user-placeholder" id="loginEmail" placeholder="Email">
+      <input type="email" class="user-placeholder" id="loginEmail" placeholder="Email">
       <div class="line-white-login"></div>
       <input type="password" class="password-placeholder" id="loginPassword" placeholder="Password">
-      </header>
-  <button type="submit" id="buttonLogin">Login</button>
-  </form>
-
+      <button type="submit" id="buttonLogin">Login</button>
   <a href="#" class"forgot"> Forgot your password ?</a>
   <a href="#/formRegister" class="register">Register</a>
   <button type="button" id="Gmail">Sign up with google</button>
   <div class="line-white-register"></div>
   </div>
-
-  <section>
-  <h1>
-Welcome to the social 
-network that loves dogs 
-the most
-  </h1>
-    <img src="../images/dogs-desktop.png" alt="dogsHome" class="dogsHome">
-  </section>
+  </form>
 
   `;
   const divElement = document.createElement('div');
@@ -43,6 +32,7 @@ export default initialSession;
 export const login = () => {
   const loginForm = document.querySelector('#formLogin');
   loginForm.addEventListener('submit', (e) => {
+    console.log('intentando enviar')
     e.preventDefault();
     const loginEmail = document.querySelector('#loginEmail').value;
     const loginPassword = document.querySelector('#loginPassword').value;
@@ -51,7 +41,6 @@ export const login = () => {
     auth
       .signInWithEmailAndPassword(loginEmail, loginPassword)
       .then(userCredential => {
-        console.log(login);
         loginForm.reset();
 
 
